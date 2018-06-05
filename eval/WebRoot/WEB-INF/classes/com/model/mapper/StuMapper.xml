@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.model.dao.StuDao" >
+
+	<!-- 学生登录查询 -->
+	<select id="stuLogin" resultType="com.model.entity.Stu">
+		select * from stu where userName=#{0} and pwd=#{1}
+	</select>
+	
+	
+
+</mapper>
