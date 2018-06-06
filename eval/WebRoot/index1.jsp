@@ -1,12 +1,26 @@
-<!DOCTYPE html>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-
-<head>
-    <title>学生评价管理系统后台首页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
-    <!-- Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+  <head>
+    <base href="<%=basePath%>">
+    
+    <title>My JSP 'index1.jsp' starting page</title>
+    
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">    
+	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+	<meta http-equiv="description" content="This is my page">
+	<!--
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	-->
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
     <!-- CSS Libs -->
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
@@ -39,10 +53,10 @@
 	<link rel="stylesheet" href="html/pages/css/style.css">
 
 	<!-- Modernizr JS -->
-	<script src="html/pages/js/modernizr-2.6.2.min.js"></script>
-</head>
-
-<body class="flat-blue">
+	<script  src="html/pages/js/modernizr-2.6.2.min.js"></script>
+  </head>
+  
+ <body class="flat-blue">
     <div class="app-container">
         <div class="row content-container">
             <nav class="navbar navbar-default navbar-fixed-top navbar-top">
@@ -66,11 +80,11 @@
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${userName}<span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
                                 <li class="profile-img">
-                                    <img src="../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
+                                    <img src="img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">白书元</h4>
+                                        <h4 class="username">${userName}</h4>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> 登录</button>
                                             <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> 注册</button>
@@ -358,5 +372,4 @@
 			<!-- Main -->
 			<script src="js/main.js"></script>
 </body>
-
 </html>
