@@ -10,8 +10,29 @@ public class Teacher {
     private Integer rid;
 
     private Integer cid;
+    
+    private String cpic;
+    
+    private String tint;
+    
+    
+    public String getCpic() {
+		return cpic;
+	}
 
-    public Integer getTid() {
+	public void setCpic(String cpic) {
+		this.cpic = cpic;
+	}
+
+	public String getTint() {
+		return tint;
+	}
+
+	public void setTint(String tint) {
+		this.tint = tint;
+	}
+
+	public Integer getTid() {
         return tid;
     }
 

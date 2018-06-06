@@ -1,5 +1,7 @@
 package com.model.service;
 
+import java.util.List;
+
 import com.model.entity.Stu;
 import com.model.entity.Teacher;
 
@@ -14,4 +16,7 @@ public interface LoginService {
   	
     //教师登录，权限为2的为教师
     public Teacher teacherLogin(String userName,String pwd);
+    
+  //查询suoyou
+    public List<Stu> stus();
 }

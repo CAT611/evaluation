@@ -11,4 +11,9 @@
 	<select id="adminLogin"  resultType="com.model.entity.Teacher">
 		select * from teacher where userName=#{0} and pwd=#{1} and rid=3
 	</select>
+	
+	<!-- 查询所有老师 -->
+	<select id="getlist" resultType="com.model.entity.Teacher">
+		select * from teacher
+	</select>
 </mapper>
