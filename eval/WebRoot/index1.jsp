@@ -20,7 +20,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
     <!-- CSS Libs -->
     <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
@@ -80,11 +80,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${userName}<span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
                                 <li class="profile-img">
-                                    <img src="../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
+                                    <img src="img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">白书元</h4>
+                                        <h4 class="username">${userName}</h4>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> 登录</button>
                                             <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> 注册</button>
@@ -204,31 +204,10 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<p>洞悉本质，价值超越，务实打造，决胜未来，以期实现粤嵌为更多的IT爱好者提供专业有效学习机会的目标。粤嵌以致力于在中国推广IT技术普及为己任，为大家提供良好的学习、就业机会，成为广大在校生和毕业生、IT技术爱好者的良师益友.</p>
 				</div>
 			</div>
-			 <div class="row">
-				<c:forEach var="tea" items="${getlist}" begin="0" end="2">
-				<div class="col-md-4 text-center animate-box">
-					<div class="product">
-						<div class="product-grid" style="background-image:url(html/pages/images/${tea.cpic});">
-							<div class="inner">
-								<p>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p>
-							</div>
-						</div>
-						<div class="desc">
-							<h3><a href="single.html">${tea.tint }</a></h3>
-							<span class="price">${tea.cid}</span>
-						</div>
-					</div>
-				</div>
-				</c:forEach>
-			</div> 
-			
 			<div class="row">
-				<c:forEach var="tea" items="${getlist}" begin="3" end="5">
 				<div class="col-md-4 text-center animate-box">
 					<div class="product">
-						<div class="product-grid" style="background-image:url(html/pages/images/${tea.cpic});">
+						<div class="product-grid" style="background-image:url(html/pages/images/mayun.jpg);">
 							<div class="inner">
 								<p>
 									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
@@ -236,13 +215,89 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 						<div class="desc">
-							<h3><a href="single.html">${tea.tint }</a></h3>
-							<span class="price">${tea.cid}</span>
+							<h3><a href="single.html">粤嵌高级总裁班教授马云先生，从事互联网装B行业20余载，从未领过薪水</a></h3>
+							<span class="price">Java</span>
 						</div>
 					</div>
 				</div>
-				</c:forEach>
-			</div> 
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(html/pages/images/qq.jpg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Pavilion Speaker</a></h3>
+							<span class="price">Html</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(html/pages/images/CJ.jpg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Ligomancer</a></h3>
+							<span class="price">嵌入式</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(html/pages/images/lqd.jpg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Alato Cabinet</a></h3>
+							<span class="price">paython</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(html/pages/images/lyh.jpg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Earing Wireless</a></h3>
+							<span class="price">C++</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 text-center animate-box">
+					<div class="product">
+						<div class="product-grid" style="background-image:url(img/person/wjl.jpg);">
+							<div class="inner">
+								<p>
+									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+								</p>
+							</div>
+						</div>
+						<div class="desc">
+							<h3><a href="single.html">Sculptural Coffee Table</a></h3>
+							<span class="price">go</span>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
