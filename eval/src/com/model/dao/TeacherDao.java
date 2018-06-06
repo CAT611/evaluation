@@ -1,5 +1,7 @@
 package com.model.dao;
 
+import java.util.List;
+
 import com.model.entity.Teacher;
 
 public interface TeacherDao {
@@ -15,4 +17,7 @@ public interface TeacherDao {
 	
 	//教师修改个人信息
 	public void updateTeacher();
+	
+	//查询所有
+	public List<Teacher> getlist();
 }

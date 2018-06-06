@@ -1,5 +1,7 @@
 package com.model.service.impl;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -22,7 +24,6 @@ public class LoginServiceImpl implements LoginService {
 	@Resource
 	private TeacherDao teacherDao;
 	
-	@RequestMapping
 	@Override
 	public Stu stuLogin(String userName,String pwd) {
 		// TODO Auto-generated method stub
@@ -42,6 +43,16 @@ public class LoginServiceImpl implements LoginService {
 		// TODO Auto-generated method stub
 		return teacherDao.adminLogin(userName,pwd);
 	}
+
+
+	@Override
+	public List<Stu> stus() {
+		// TODO Auto-generated method stub
+		return stuDao.stus();
+	}
+
+
+	
 	
 	
 	

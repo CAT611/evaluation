@@ -6,7 +6,9 @@
 	<select id="stuLogin" resultType="com.model.entity.Stu">
 		select * from stu where userName=#{0} and pwd=#{1}
 	</select>
-	
-	
+	<!-- 查询所有学生 -->
+	<select id="stus" resultType="com.model.entity.Stu">
+		select * from stu
+	</select>
 
 </mapper>

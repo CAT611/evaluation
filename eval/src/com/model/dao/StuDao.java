@@ -1,5 +1,7 @@
 package com.model.dao;
 
+import java.util.List;
+
 import com.model.entity.Stu;
 
 public interface StuDao {
@@ -13,5 +15,7 @@ public interface StuDao {
     //修改学生个人信息
     public void  updateStu();
     
+    //查询suoyou
+    public List<Stu> stus();
     
 }
