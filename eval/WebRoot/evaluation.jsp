@@ -1,3 +1,9 @@
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 
@@ -8,37 +14,37 @@
     <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
     <!-- CSS Libs -->
-    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../../lib/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="../../lib/css/animate.min.css">
-    <link rel="stylesheet" type="text/css" href="../../lib/css/bootstrap-switch.min.css">
-    <link rel="stylesheet" type="text/css" href="../../lib/css/checkbox3.min.css">
-    <link rel="stylesheet" type="text/css" href="../../lib/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="../../lib/css/dataTables.bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../../lib/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/bootstrap-switch.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/checkbox3.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="lib/css/select2.min.css">
     <!-- CSS App -->
-    <link rel="stylesheet" type="text/css" href="../../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../../css/themes/flat-blue.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/themes/flat-blue.css">
     
     
-    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="html/pages/css/animate.css">
 	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="html/pages/css/icomoon.css">
 	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="html/pages/css/bootstrap.css">
 
 	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
+	<link rel="stylesheet" href="html/pages/css/flexslider.css">
 
 	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="html/pages/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="html/pages/css/owl.theme.default.min.css">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="html/pages/css/style.css">
 
 	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="html/pages/js/modernizr-2.6.2.min.js"></script>
 </head>
 
 <body class="flat-blue">
@@ -161,14 +167,17 @@
                 </nav>
             </div>
             
-	
+<!-- 	
 	<div id="page">
-
-	</div>
+		<br><br>
+		<br><br>
+		<br><br>
+		<br><br>	
+	</div> -->
 	
 
 	<div id="fh5co-product">
-	
+	<div class="container">
 		<div align="center" class="row" style="text-align: center;width: 1000px;margin: 0 auto">	
 			<font style="color: red">白初元</font>同学你好，欢迎评教，请选择评教老师<br>
 			<select style="width: 100px">
@@ -288,12 +297,15 @@
 			<br>
 			<p style="text-align: right;"><input type="submit" value="提交"></p>
 		</div>
+		</div>
 	</div>
 
 
 
 
 
+	
+	<!--版权--->
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
@@ -302,8 +314,7 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-						<small class="block">&copy; 2016 Free HTML5. All Rights Reserved.</small> 
-						<small class="block">More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></small>
+						<small class="block">&copy; 2016 Free HTML5. 仅供学习交流</small> 
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
@@ -318,67 +329,44 @@
 
 		</div>
 	</footer>
-	</div>
+	
+	
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
-	<!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
-            </div>
-        <footer class="app-footer">
-        
-            <div class="wrapper">
-                <span class="pull-right">2.1 <a href="#"><i class="fa fa-long-arrow-up"></i></a></span> © 2015 Copyright. 仅供学习交流 <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">严禁用作商业用途
-            </div>
-        </footer>
+	</div></div>
             <!-- Javascript Libs -->
-            <script type="text/javascript" src="../../lib/js/jquery.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/bootstrap.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/Chart.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/bootstrap-switch.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/jquery.matchHeight-min.js"></script>
-            <script type="text/javascript" src="../../lib/js/jquery.dataTables.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/dataTables.bootstrap.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/select2.full.min.js"></script>
-            <script type="text/javascript" src="../../lib/js/ace/ace.js"></script>
-            <script type="text/javascript" src="../../lib/js/ace/mode-html.js"></script>
-            <script type="text/javascript" src="../../lib/js/ace/theme-github.js"></script>
+            <script type="text/javascript" src="lib/js/jquery.min.js"></script>
+            <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
+            <script type="text/javascript" src="lib/js/Chart.min.js"></script>
+            <script type="text/javascript" src="lib/js/bootstrap-switch.min.js"></script>
+            <script type="text/javascript" src="lib/js/jquery.matchHeight-min.js"></script>
+            <script type="text/javascript" src="lib/js/jquery.dataTables.min.js"></script>
+            <script type="text/javascript" src="lib/js/dataTables.bootstrap.min.js"></script>
+            <script type="text/javascript" src="lib/js/select2.full.min.js"></script>
+            <script type="text/javascript" src="lib/js/ace/ace.js"></script>
+            <script type="text/javascript" src="lib/js/ace/mode-html.js"></script>
+            <script type="text/javascript" src="lib/js/ace/theme-github.js"></script>
             <!-- Javascript -->
-            <script type="text/javascript" src="../../js/app.js"></script>
-            <script type="text/javascript" src="../../js/index.js"></script>
+            <script type="text/javascript" src="js/app.js"></script>
+            <script type="text/javascript" src="js/index.js"></script>
             
-            <!-- jQuery -->
-	<script src="js/jquery.min.js"></script>
-	<!-- jQuery Easing -->
-	<script src="js/jquery.easing.1.3.js"></script>
-	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
-	<!-- Waypoints -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<!-- Carousel -->
-	<script src="js/owl.carousel.min.js"></script>
-	<!-- countTo -->
-	<script src="js/jquery.countTo.js"></script>
-	<!-- Flexslider -->
-	<script src="js/jquery.flexslider-min.js"></script>
-	<!-- Main -->
-	<script src="js/main.js"></script>
+		            <!-- jQuery -->
+			<script src="js/jquery.min.js"></script>
+			<!-- jQuery Easing -->
+			<script src="js/jquery.easing.1.3.js"></script>
+			<!-- Bootstrap -->
+			<script src="js/bootstrap.min.js"></script>
+			<!-- Waypoints -->
+			<script src="js/jquery.waypoints.min.js"></script>
+			<!-- Carousel -->
+			<script src="js/owl.carousel.min.js"></script>
+			<!-- countTo -->
+			<script src="js/jquery.countTo.js"></script>
+			<!-- Flexslider -->
+			<script src="js/jquery.flexslider-min.js"></script>
+			<!-- Main -->
+			<script src="js/main.js"></script>
 </body>
-
 </html>

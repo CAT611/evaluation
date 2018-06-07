@@ -216,7 +216,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 						<div class="desc">
-							<h3><a href="single.html">${tea.tint }</a></h3>
+							<h3 style="height: 95px"><a href="single.html">${tea.tint }</a></h3>
 							<span class="price">${tea.cid}</span>
 						</div>
 					</div>
@@ -236,7 +236,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							</div>
 						</div>
 						<div class="desc">
-							<h3><a href="single.html">${tea.tint }</a></h3>
+							<h3 style="height: 95px"><a href="single.html">${tea.tint }</a></h3>
 							<span class="price">${tea.cid}</span>
 						</div>
 					</div>
@@ -283,7 +283,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
 	
-        <div>
+        </div> </div>
             <!-- Javascript Libs -->
             <script type="text/javascript" src="lib/js/jquery.min.js"></script>
             <script type="text/javascript" src="lib/js/bootstrap.min.js"></script>
