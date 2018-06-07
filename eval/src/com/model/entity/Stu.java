@@ -41,4 +41,18 @@ public class Stu {
     public void setRid(Integer rid) {
         this.rid = rid;
     }
+
+	public Stu() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Stu(Integer sid, String userName, String pwd) {
+		super();
+		this.sid = sid;
+		this.userName = userName;
+		this.pwd = pwd;
+	}
+
+	
 }

@@ -9,7 +9,7 @@
 	
 	<!-- 向数据库中插入评论结果,插入没有返回类型 -->
 	<insert id="insertAnswer" parameterType="com.model.entity.Answer"  >
-		insert answer (acontent,ascore,sid,tid) values (#{acontent},#{ascore},#{sid},#{tid})
+		insert answer (acontent,ascore,sid,tid,atime) values (#{acontent},#{ascore},#{sid},#{tid},#{atime})
 	</insert>
 	
 	<!-- 删除数据库中的评论结果 -->
