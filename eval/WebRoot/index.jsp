@@ -217,7 +217,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						<div class="desc">
 							<h3 style="height: 95px"><a href="single.html">${tea.tint }</a></h3>
-							<span class="price">${tea.cid}</span>
+							<span class="price">${tea.course.cname}</span>
 						</div>
 					</div>
 				</div>

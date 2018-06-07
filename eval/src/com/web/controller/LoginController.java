@@ -5,7 +5,6 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,10 +30,17 @@ public class LoginController {
 		Stu stuLogin = loginService.stuLogin(userName, pwd);
 		//老师登录
 		Teacher teacherLogin = loginService.teacherLogin(userName, pwd);
+		
 		List<Teacher> getlist = teacherDao.getlist();
 		request.setAttribute("getlist", getlist);
-		if(adminLogin!=null||stuLogin!=null||teacherLogin!=null){
-			request.setAttribute("userName", userName);
+		if(teacherLogin!=null){
+			request.setAttribute("teacherLogin", teacherLogin);
+			return "index.jsp";
+		}else if(stuLogin!=null){
+			request.setAttribute("stuLogin", stuLogin);
+			return "index.jsp";
+		}else if(adminLogin!=null){
+			request.setAttribute("adminLogin", adminLogin);
 			return "index.jsp";
 		}
 		return "login";
