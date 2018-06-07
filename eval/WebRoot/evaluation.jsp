@@ -4,6 +4,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 
@@ -180,122 +181,44 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div class="container">
 		<div align="center" class="row" style="text-align: center;width: 1000px;margin: 0 auto">	
 			<font style="color: red">白初元</font>同学你好，欢迎评教，请选择评教老师<br>
-			<select style="width: 100px">
+				<form action="savaAnswer.do" method="post">
+			<select style="width: 100px" name="">
+			<%-- <c:forEach var="teacher" items="">
+				
+			</c:forEach> --%>
 				<option>马老师</option>
 				<option>马老师</option>
 				<option>马老师</option>
 				<option>马老师</option>
 			</select>
 			<table align="center"  border="1px" style="width:1000px"  >
-				<tr style="height: 45px">
+				<tr style="height: 50px">
 					<td>题号</td>
 					<td>评价指标</td>
-					<td>打分分值</td>
-				</tr>			
-				<tr style="height: 35px">
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
 				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr><tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
-				<tr>
-					<td>1</td>
-					<td>对教学工作热情，讲课认真，投入</td>
-					<td>
-						<input type="checkbox" name="score">10<input type="checkbox" name="score">8
-						<input type="checkbox" name="score">6 <input type="checkbox" name="score">4
-					</td>
-				</tr>
+				<c:forEach var="problem" items="${list}" varStatus="num" >
+					<tr style="height: 40px">
+						<td>${num.index+1}</td>
+						<td style="text-align: left" >
+							${problem.pcontent}<br>
+							<input type="radio" value="10" name="panswer${num.index+1}" >${problem.panswer1}
+							<input type="radio" value="8" name="panswer${num.index+1}"  >${problem.panswer2}
+							<input type="radio" value="6" name="panswer${num.index+1}"  >${problem.panswer3}
+							<input type="radio" value="4" name="panswer${num.index+1}"  >${problem.panswer4}
+							<input type="radio" value="2" name="panswer${num.index+1}"  >${problem.panswer5}
+						</td>
+					</tr>
+				</c:forEach>			
 			</table>
 			<br>
 			<p style="text-align: left">如果有其他建议，请留下宝贵建议：</p>
 			
-			<textarea id='memo' style="height: 150px;width: 1000px;resize: none;">
+			<textarea name="acontent" style="height: 150px;width: 1000px;resize: none;">
 			
 			</textarea>
 			<br>
 			<p style="text-align: right;"><input type="submit" value="提交"></p>
+			</form>
 		</div>
 		</div>
 	</div>
