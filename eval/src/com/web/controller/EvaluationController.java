@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.model.entity.Answer;
 import com.model.entity.Problem;
 import com.model.entity.Stu;
+import com.model.entity.Stutea;
 import com.model.entity.Teacher;
 import com.model.service.EvaluationService;
 
@@ -24,6 +25,8 @@ public class EvaluationController {
 	@Resource
 	private EvaluationService evaluationService;
 	
+	//根据用户ID查询学生所对应的课程
+	
 	//查看所有的评价问题
 	@RequestMapping(value="/getEvluation",method=RequestMethod.GET)
 	public String getEvluation(HttpServletRequest request){
@@ -31,22 +34,16 @@ public class EvaluationController {
 		HttpSession session = request.getSession();
 		//获取用户名账号
 		Stu stu = (Stu) session.getAttribute("stuLogin");
-		Teacher teacher = (Teacher) session.getAttribute("teacherLogin");
-		Teacher admin = (Teacher) session.getAttribute("adminLogin");
+		System.out.println(stu);
+		int sid = stu.getSid();
+		List<Stutea> teacherList =  evaluationService.selectTeacher(sid);
 		
-		int id=0;
-		if(stu!=null){
-			//获取学生的ID
-			id = stu.getSid();
+		request.setAttribute("teacherList", teacherList);
+		/*String  userName="";
+		for (Stutea stutea : teacherList) {
+			userName+=stutea.getTeacher().getUserName()+",";
 		}
-		if(teacher!=null){
-			//获取教师的ID
-			id = teacher.getTid();
-		}
-		if(admin!=null){
-			//获取管理员的ID
-			id = teacher.getTid();
-		}		
+		System.out.println(userName);*/
 		
 		List<Problem> list = evaluationService.selectProblem();
 		request.setAttribute("list", list);

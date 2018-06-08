@@ -1,5 +1,8 @@
 package com.model.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Stu {
     private Integer sid;
 
@@ -8,8 +11,19 @@ public class Stu {
     private String pwd;
 
     private Integer rid;
+    
+    private List<Stutea> list  = new ArrayList<Stutea>();
+    
+    
+	public List<Stutea> getList() {
+		return list;
+	}
 
-    public Integer getSid() {
+	public void setList(List<Stutea> list) {
+		this.list = list;
+	}
+
+	public Integer getSid() {
         return sid;
     }
 

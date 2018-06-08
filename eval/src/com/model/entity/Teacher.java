@@ -1,5 +1,8 @@
 package com.model.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Teacher {
     private Integer tid;
 
@@ -17,7 +20,18 @@ public class Teacher {
     
     private Course course;
     
+    private List<Stutea> list  = new ArrayList<Stutea>();
     
+    
+   	public List<Stutea> getList() {
+   		return list;
+   	}
+
+   	public void setList(List<Stutea> list) {
+   		this.list = list;
+   	}
+
+
 	public Course getCourse() {
 		return course;
 	}

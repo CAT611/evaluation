@@ -1,13 +1,34 @@
 package com.model.entity;
 
+
 public class Stutea {
     private Integer id;
 
     private Integer sid;
 
     private Integer tid;
+    
+    private Stu stu;
+    
+    private Teacher teacher;
 
-    public Integer getId() {
+	public Stu getStu() {
+		return stu;
+	}
+
+	public void setStu(Stu stu) {
+		this.stu = stu;
+	}
+
+	public Teacher getTeacher() {
+		return teacher;
+	}
+
+	public void setTeacher(Teacher teacher) {
+		this.teacher = teacher;
+	}
+
+	public Integer getId() {
         return id;
     }
 

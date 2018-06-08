@@ -69,14 +69,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <i class="fa fa-times icon"></i>
                         </button>
                         <li class="dropdown profile">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">白书元 <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${sessionScope.userName } <span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
                                 <li class="profile-img">
                                     <img src="../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">白书元</h4>
+                                        <h4 class="username">${sessionScope.userName }</h4>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> 登录</button>
                                             <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> 注册</button>
@@ -180,16 +180,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="fh5co-product">
 	<div class="container">
 		<div align="center" class="row" style="text-align: center;width: 1000px;margin: 0 auto">	
-			<font style="color: red">${userName}</font>同学你好，欢迎评教，请选择评教老师<br>
+			<font style="color: red">${sessionScope.userName }</font>同学你好，欢迎评教，请选择评教老师<br>
 				<form action="savaAnswer.do" method="post">
 			<select style="width: 100px" name="">
-			<%-- <c:forEach var="teacher" items="">
-				
-			</c:forEach> --%>
-				<option>马老师</option>
-				<option>马老师</option>
-				<option>马老师</option>
-				<option>马老师</option>
+			 <c:forEach var="Stutea" items="${teacherList }">
+				<option>${Stutea.teacher.userName}</option>
+			</c:forEach> 
 			</select>
 			<table align="center"  border="1px" style="width:1000px"  >
 				<tr style="height: 50px">

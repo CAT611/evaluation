@@ -137,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <div id="dropdown-table" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="evaluation.jsp">教学评价</a>
+                                            <li><a href="getEvluation.do">教学评价</a>
                                             </li>
                                             <li><a href="../table/datatable.html">查看评价</a>
                                             </li>

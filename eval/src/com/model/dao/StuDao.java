@@ -18,4 +18,6 @@ public interface StuDao {
     //查询suoyou
     public List<Stu> stus();
     
+    //
+    
 }
