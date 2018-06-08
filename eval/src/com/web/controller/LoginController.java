@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,14 +34,16 @@ public class LoginController {
 		
 		List<Teacher> getlist = teacherDao.getlist();
 		request.setAttribute("getlist", getlist);
+		HttpSession session = request.getSession();
+		session.setAttribute("userName",userName);
 		if(teacherLogin!=null){
-			request.setAttribute("teacherLogin", teacherLogin);
+			session.setAttribute("teacherLogin", teacherLogin);
 			return "index.jsp";
 		}else if(stuLogin!=null){
-			request.setAttribute("stuLogin", stuLogin);
+			session.setAttribute("stuLogin", stuLogin);
 			return "index.jsp";
 		}else if(adminLogin!=null){
-			request.setAttribute("adminLogin", adminLogin);
+			session.setAttribute("adminLogin", adminLogin);
 			return "index.jsp";
 		}
 		return "login";

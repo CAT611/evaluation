@@ -180,7 +180,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 	<div id="fh5co-product">
 	<div class="container">
 		<div align="center" class="row" style="text-align: center;width: 1000px;margin: 0 auto">	
-			<font style="color: red">白初元</font>同学你好，欢迎评教，请选择评教老师<br>
+			<font style="color: red">${userName}</font>同学你好，欢迎评教，请选择评教老师<br>
 				<form action="savaAnswer.do" method="post">
 			<select style="width: 100px" name="">
 			<%-- <c:forEach var="teacher" items="">

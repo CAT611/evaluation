@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.model.entity.Answer;
 import com.model.entity.Problem;
 import com.model.entity.Stu;
+import com.model.entity.Teacher;
 import com.model.service.EvaluationService;
 
 @Controller
@@ -26,6 +27,27 @@ public class EvaluationController {
 	//查看所有的评价问题
 	@RequestMapping(value="/getEvluation",method=RequestMethod.GET)
 	public String getEvluation(HttpServletRequest request){
+		//获取session
+		HttpSession session = request.getSession();
+		//获取用户名账号
+		Stu stu = (Stu) session.getAttribute("stuLogin");
+		Teacher teacher = (Teacher) session.getAttribute("teacherLogin");
+		Teacher admin = (Teacher) session.getAttribute("adminLogin");
+		
+		int id=0;
+		if(stu!=null){
+			//获取学生的ID
+			id = stu.getSid();
+		}
+		if(teacher!=null){
+			//获取教师的ID
+			id = teacher.getTid();
+		}
+		if(admin!=null){
+			//获取管理员的ID
+			id = teacher.getTid();
+		}		
+		
 		List<Problem> list = evaluationService.selectProblem();
 		request.setAttribute("list", list);
 		return "evaluation.jsp";
@@ -37,11 +59,27 @@ public class EvaluationController {
 	public String savaAnswer(Answer answer,HttpServletRequest request){
 		//获取session
 		HttpSession session = request.getSession();
-		session.setAttribute("stu", new Stu(123,"小白","123"));
 		//获取用户名账号
-		Stu stu = (Stu) session.getAttribute("stu");
-		//获取学生的ID
-		int sid = stu.getSid();
+		Stu stu = (Stu) session.getAttribute("stuLogin");
+		Teacher teacher = (Teacher) session.getAttribute("teacherLogin");
+		Teacher admin = (Teacher) session.getAttribute("adminLogin");
+		
+		int id=0;
+		if(stu!=null){
+			//获取学生的ID
+			id = stu.getSid();
+		}
+		if(teacher!=null){
+			//获取教师的ID
+			id = teacher.getTid();
+		}
+		if(admin!=null){
+			//获取管理员的ID
+			id = teacher.getTid();
+		}
+		
+	
+		
 		//获取当前时间
 		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		String atime = df.format(new Date());
@@ -60,7 +98,7 @@ public class EvaluationController {
 		int ascore=ascore1+ascore2+ascore3+ascore4+ascore5+ascore6+ascore7+ascore8+ascore9+ascore10;
 		//将查询到的结果放入数据库
 		answer.setAscore(ascore);
-		answer.setSid(sid);
+		answer.setSid(id);
 		answer.setAtime(atime);
 		answer.setAscore1(ascore1);
 		answer.setAscore2(ascore2);

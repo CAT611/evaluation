@@ -77,14 +77,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <i class="fa fa-times icon"></i>
                         </button>
                         <li class="dropdown profile">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${userName}<span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${sessionScope.userName}<span class="caret"></span></a>
                             <ul class="dropdown-menu animated fadeInDown">
                                 <li class="profile-img">
                                     <img src="../img/profile/picjumbo.com_HNCK4153_resize.jpg" class="profile-img">
                                 </li>
                                 <li>
                                     <div class="profile-info">
-                                        <h4 class="username">白书元</h4>
+                                        <h4 class="username">${sessionScope.userName }</h4>
                                         <div class="btn-group margin-bottom-2x" role="group">
                                             <button type="button" class="btn btn-default"><i class="fa fa-user"></i> 登录</button>
                                             <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> 注册</button>
@@ -137,7 +137,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <div id="dropdown-table" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="evaluation.html">教学评价</a>
+                                            <li><a href="evaluation.jsp">教学评价</a>
                                             </li>
                                             <li><a href="../table/datatable.html">查看评价</a>
                                             </li>
