@@ -23,4 +23,10 @@ public class TeacherServiceImpl implements TeacherService {
 		return teacherDao.getlist();
 	}
 
+	@Override
+	public Teacher getTeacher(int id) {
+		// TODO Auto-generated method stub
+		return teacherDao.getTeacher(id);
+	}
+
 }

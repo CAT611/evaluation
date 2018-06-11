@@ -14,7 +14,7 @@
 	<!--2.数据源  -->
 	<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://192.168.10.175:3306/evalu"/>
+		<property name="url" value="jdbc:mysql://192.168.10.175:3306/evalu?Unicode=true;characterEncoding=utf-8"/>
 		<property name="username" value="root"/>
 		<property name="password" value="root"/>
 	</bean>

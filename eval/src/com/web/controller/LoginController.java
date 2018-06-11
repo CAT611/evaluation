@@ -31,31 +31,36 @@ public class LoginController {
 	public String login(String userName, String pwd,String shenfen,HttpServletRequest request){
 		System.out.println(userName+"------"+pwd+"------"+shenfen);
 		List<Power> onelist = powerService.onelist(0);
+		for(Power p:onelist){
+			System.out.println(p);
+		}
+		request.setAttribute("onelist", onelist);
+		HttpSession session = request.getSession();
 		//获取下拉列表框值
 		if("1".equals(shenfen)){
 			//学生登录
 			Stu stuLogin = loginService.stuLogin(userName, pwd);
+			session.setAttribute("stuLogin", stuLogin);
 			if(stuLogin!=null){
 				List<Teacher> getlist = teacherDao.getlist();	
-				HttpSession session = request.getSession();
 				request.setAttribute("getlist", getlist);
 				session.setAttribute("userName",userName);
-				return "index.jsp";
+				return "test";
 			}
-			return "login.jsp";
+			return "login";
 		}else if("2".equals(shenfen)){
 			//老师登录
 			Teacher teacherLogin = loginService.teacherLogin(userName, pwd);
+			session.setAttribute("teacherLogin", teacherLogin);
 			if(teacherLogin!=null){
 				List<Teacher> getlist = teacherDao.getlist();
-				HttpSession session = request.getSession();
 				request.setAttribute("getlist", getlist);
 				session.setAttribute("userName",userName);
-				return "index.jsp";
+				return "index";
 			}
-			return "login.jsp";
+			return "login";
 		}
-		return "login.jsp";
+		return "login";
 	}
 
 }

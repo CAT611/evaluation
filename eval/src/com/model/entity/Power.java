@@ -3,41 +3,50 @@ package com.model.entity;
 public class Power {
     private Integer pid;
 
-    private String pname;
+    private String ppname;
 
     private Integer sjid;
 
     private String dic;
 
-    public Integer getPid() {
-        return pid;
-    }
+	public Integer getPid() {
+		return pid;
+	}
 
-    public void setPid(Integer pid) {
-        this.pid = pid;
-    }
+	public void setPid(Integer pid) {
+		this.pid = pid;
+	}
 
-    public String getPname() {
-        return pname;
-    }
 
-    public void setPname(String pname) {
-        this.pname = pname == null ? null : pname.trim();
-    }
+	public String getPpname() {
+		return ppname;
+	}
 
-    public Integer getSjid() {
-        return sjid;
-    }
+	public void setPpname(String ppname) {
+		this.ppname = ppname;
+	}
 
-    public void setSjid(Integer sjid) {
-        this.sjid = sjid;
-    }
+	public Integer getSjid() {
+		return sjid;
+	}
 
-    public String getDic() {
-        return dic;
-    }
+	public void setSjid(Integer sjid) {
+		this.sjid = sjid;
+	}
 
-    public void setDic(String dic) {
-        this.dic = dic == null ? null : dic.trim();
-    }
+	public String getDic() {
+		return dic;
+	}
+
+	public void setDic(String dic) {
+		this.dic = dic;
+	}
+
+	@Override
+	public String toString() {
+		return "Power [pid=" + pid + ", ppname=" + ppname + ", sjid=" + sjid
+				+ ", dic=" + dic + "]";
+	}
+
+    
 }
