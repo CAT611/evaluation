@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.model.dao.PowerDao" >
+  <resultMap id="BaseResultMap" type="com.model.entity.Power" >
+    <id column="pid" property="pid" jdbcType="INTEGER" />
+    <result column="pname" property="pname" jdbcType="VARCHAR" />
+    <result column="sjid" property="sjid" jdbcType="INTEGER" />
+    <result column="dic" property="dic" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    pid, pname, sjid, dic
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from power
+    where pid = #{pid,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from power
+    where pid = #{pid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.model.entity.Power" >
+    insert into power (pid, pname, sjid, 
+      dic)
+    values (#{pid,jdbcType=INTEGER}, #{pname,jdbcType=VARCHAR}, #{sjid,jdbcType=INTEGER}, 
+      #{dic,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.model.entity.Power" >
+    insert into power
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pid != null" >
+        pid,
+      </if>
+      <if test="pname != null" >
+        pname,
+      </if>
+      <if test="sjid != null" >
+        sjid,
+      </if>
+      <if test="dic != null" >
+        dic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pid != null" >
+        #{pid,jdbcType=INTEGER},
+      </if>
+      <if test="pname != null" >
+        #{pname,jdbcType=VARCHAR},
+      </if>
+      <if test="sjid != null" >
+        #{sjid,jdbcType=INTEGER},
+      </if>
+      <if test="dic != null" >
+        #{dic,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.model.entity.Power" >
+    update power
+    <set >
+      <if test="pname != null" >
+        pname = #{pname,jdbcType=VARCHAR},
+      </if>
+      <if test="sjid != null" >
+        sjid = #{sjid,jdbcType=INTEGER},
+      </if>
+      <if test="dic != null" >
+        dic = #{dic,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where pid = #{pid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.model.entity.Power" >
+    update power
+    set pname = #{pname,jdbcType=VARCHAR},
+      sjid = #{sjid,jdbcType=INTEGER},
+      dic = #{dic,jdbcType=VARCHAR}
+    where pid = #{pid,jdbcType=INTEGER}
+  </update>
+  
+  <!-- 查询所有一级权限 -->
+  <select id="onelist" parameterType="int" resultType="com.model.entity.Power">
+  	select * from power where sjid=#{id}
+  </select>  
+</mapper>

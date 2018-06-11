@@ -85,10 +85,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <li>
                                     <div class="profile-info">
                                         <h4 class="username">${sessionScope.userName }</h4>
-                                        <div class="btn-group margin-bottom-2x" role="group">
-                                            <button type="button" class="btn btn-default"><i class="fa fa-user"></i> 登录</button>
-                                            <button type="button" class="btn btn-default"><i class="fa fa-sign-out"></i> 注册</button>
-                                        </div>
                                     </div>
                                 </li>
                             </ul>
@@ -122,7 +118,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <div id="dropdown-form" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="../form/ui-view.html">个人信息查看</a>
+                                            <li><a href="html/form/ui-view.html">个人信息查看</a>
                                             </li>
                                         </ul>
                                     </div>

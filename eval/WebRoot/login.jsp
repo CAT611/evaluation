@@ -46,6 +46,13 @@
 								<input type="password" class="am-radius" placeholder="密码" name="pwd">
 							</div>
 							<div class="am-form-group ">
+									<select class="am-radius" name="shenfen">
+										<option selected="selected" value="0">选择身份</option>
+										<option value="1">学生</option>
+										<option value="2">老师</option>
+									</select>
+							</div>
+							<div class="am-form-group ">
 								<label style="font-weight: normal;color: #999;"> <input
 									type="checkbox" class="remeber"> 记住用户名
 								</label>
