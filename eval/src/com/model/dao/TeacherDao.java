@@ -13,7 +13,7 @@ public interface TeacherDao {
 	public Teacher adminLogin(String userName,String pwd);
 	
 	//教师查看个人信息
-	public Teacher getTeacher();
+	public Teacher getTeacher(int id);
 	
 	//教师修改个人信息
 	public void updateTeacher();

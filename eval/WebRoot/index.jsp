@@ -104,32 +104,38 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <i class="fa fa-times icon"></i>
                             </button>
                         </div>
+                        <c:forEach var="one" items="${onelist} ">
+                        
+                        </c:forEach>
                         <ul class="nav navbar-nav">
+                         
                             <li class="active">
-                                <a href="index.html">
+                                <a href="index.jsp">
                                     <span class="icon fa fa-tachometer"></span><span class="title">首页</span>
                                 </a>
                             </li>
+                          	
+                          	<%-- <c:forEach var="one" items="${onelist} "> --%>
                           	<li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-form">
-                                    <span class="icon fa fa-file-text-o"></span><span class="title">个人信息管理</span>
+                                    <span class="icon fa fa-file-text-o"></span><span class="title">个人设置管理</span>
                                 </a>
-                                <!-- Dropdown level 1 -->
+                             
                                 <div id="dropdown-form" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
-                                            <li><a href="html/form/ui-view.html">个人信息查看</a>
+                                            <li><a href="html/form/view.jsp">个人信息查看</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                             </li>
-                            
+                            <%-- </c:forEach> --%>
+                             
                             <li class="panel panel-default dropdown">
                                 <a data-toggle="collapse" href="#dropdown-table">
                                     <span class="icon fa fa-table"></span><span class="title">评价管理</span>
                                 </a>
-                                <!-- Dropdown level 1 -->
                                 <div id="dropdown-table" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
@@ -146,7 +152,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <a data-toggle="collapse" href="#dropdown-element">
                                     <span class="icon fa fa-desktop"></span><span class="title">系统设置</span>
                                 </a>
-                                <!-- Dropdown level 1 -->
                                 <div id="dropdown-element" class="panel-collapse collapse">
                                     <div class="panel-body">
                                         <ul class="nav navbar-nav">
@@ -159,7 +164,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                         </ul>
                                     </div>
                                 </div>
-                            </li>
+                            </li> 
                             <!-- Dropdown-->
                             <li>
                                 <a href="../license.html">

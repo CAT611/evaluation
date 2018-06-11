@@ -10,7 +10,7 @@ public interface StuDao {
     public Stu stuLogin(String userName,String pwd);
     
     //查询学生个人信息
-    public Stu getStu();
+    public Stu getStu(int id);
     
     //修改学生个人信息
     public void  updateStu();

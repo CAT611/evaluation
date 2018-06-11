@@ -14,17 +14,9 @@
 	<!-- 自动装载 -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 
-<<<<<<< HEAD
-	<!-- ViewResolver -->  
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  
-    	<property name="prefix" value=""/>  
-    	<property name="suffix" value=""/>  
-	</bean>  
-=======
 	<!-- 配置视图解析器  -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
->>>>>>> 7e1d9f53a0272a75a7690a3ec2484072a0ee1ace
 </beans>
