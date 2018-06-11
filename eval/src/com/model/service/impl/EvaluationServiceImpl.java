@@ -7,8 +7,10 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.model.dao.AnswerDao;
 import com.model.dao.ProblemDao;
 import com.model.dao.StuteaDao;
+import com.model.entity.Answer;
 import com.model.entity.Problem;
 import com.model.entity.Stutea;
 import com.model.service.EvaluationService;
@@ -23,6 +25,9 @@ public class EvaluationServiceImpl implements EvaluationService {
 	@Resource
 	private StuteaDao stuteaDao;
 	
+	@Resource
+	private AnswerDao answerDao;
+	
 	//查看数据库中得评论问题
 	@Override
 	public List<Problem> selectProblem() {
@@ -34,6 +39,12 @@ public class EvaluationServiceImpl implements EvaluationService {
 	public List<Stutea> selectTeacher(int sid) {
 		// TODO Auto-generated method stub
 		return stuteaDao.selectTeacher(sid);
+	}
+
+	@Override
+	public int saveAnswer(Answer answer) {
+		// TODO Auto-generated method stub
+		return answerDao.saveAnswer(answer);
 	}
 
 }

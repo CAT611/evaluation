@@ -6,7 +6,7 @@ public interface AnswerDao {
 	
 	
 	//向数据库中插入评论结果
-	public int insertAnswer(Answer answer);
+	public int saveAnswer(Answer answer);
 	
 	//查询数据库中所有评论结果
 	public Answer getListAnswer();

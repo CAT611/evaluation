@@ -168,13 +168,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 </nav>
             </div>
             
-<!-- 	
-	<div id="page">
-		<br><br>
-		<br><br>
-		<br><br>
-		<br><br>	
-	</div> -->
 	
 
 	<div id="fh5co-product">
@@ -182,7 +175,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<div align="center" class="row" style="text-align: center;width: 1000px;margin: 0 auto">	
 			<font style="color: red">${sessionScope.userName }</font>同学你好，欢迎评教，请选择评教老师<br>
 				<form action="savaAnswer.do" method="post">
-			<select style="width: 100px" name="">
+			<select style="width: 100px" name="tid">
 			 <c:forEach var="Stutea" items="${teacherList }">
 				<option>${Stutea.teacher.userName}</option>
 			</c:forEach> 

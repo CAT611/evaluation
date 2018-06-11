@@ -8,8 +8,10 @@
 	</select>
 	
 	<!-- 向数据库中插入评论结果,插入没有返回类型 -->
-	<insert id="insertAnswer" parameterType="com.model.entity.Answer"  >
-		insert answer (acontent,ascore,sid,tid,atime) values (#{acontent},#{ascore},#{sid},#{tid},#{atime})
+	<insert id="saveAnswer" parameterType="com.model.entity.Answer"  >
+		insert answer (acontent,ascore,ascore1,ascore2,ascore3,ascore4,ascore5,ascore6,ascore7,ascore8,ascore9,ascore10,sid,tid,atime)
+		 values (#{acontent},#{ascore},#{ascore1},#{ascore2},#{ascore3},#{ascore4},#{ascore5},#{ascore6},#{ascore7},#{ascore8},#{ascore9},
+		 #{ascore10}, #{sid},#{tid},#{atime})
 	</insert>
 	
 	<!-- 删除数据库中的评论结果 -->

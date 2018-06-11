@@ -2,6 +2,7 @@ package com.model.service;
 
 import java.util.List;
 
+import com.model.entity.Answer;
 import com.model.entity.Problem;
 import com.model.entity.Stutea;
 
@@ -12,5 +13,8 @@ public interface EvaluationService {
 	
 	//根据学生userName查询学生所对应的老师 
 	public List<Stutea> selectTeacher(int sid);
+	
+	//向数据库中插入评论结果
+	public int saveAnswer(Answer answer);
 
 }
